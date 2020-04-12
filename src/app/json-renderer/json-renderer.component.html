@@ -1,0 +1,46 @@
+<div class="schema">
+    <h6>JSON Field Renderer :</h6>
+    <div *ngIf="isObject(schemaJson)">
+        <ng-container *ngFor="let element of keysOfSchema">
+            <div class="node" *ngIf="schemaJson[element]  === 'string'"><label>{{getSentenceCase(element)}}</label> : <input placeholder="type text..." type="text"> </div>
+            <div class="node" *ngIf="schemaJson[element] === 'number'"><label>{{getSentenceCase(element)}}</label> : <input placeholder="type number..." type="number"></div>
+            <div class="node" *ngIf="schemaJson[element] === 'Date'"><label>{{getSentenceCase(element)}} </label> : <input type="date"></div>
+            <div class="node" *ngIf="isArray(schemaJson[element])">
+                <label for="">{{getSentenceCase(element)}}</label> : <br><br>
+                <app-list [schemaList]="schemaJson[element]"></app-list>
+            </div>
+        </ng-container>
+    </div>
+    <div *ngIf="isArray(schemaJson)">
+        <app-list [schemaList]="schemaJson"></app-list>
+        <!-- <table>
+            <ng-container *ngFor="let element of schemaJson">
+                <ng-container *ngIf="isObject(element)">
+    
+                    <ng-container *ngFor="let list of element | keyvalue">
+                        <td>
+                            <tr>
+                                <th>{{ list.key }}</th>
+                            </tr>
+                            <ng-container *ngIf="!isArray(list.value); else showIcon">
+                                <tr>
+                                    {{
+                                list.value
+                              }}
+                                </tr>
+                            </ng-container>
+                            <ng-template #showIcon>
+                                <tr (click)="expand(list.value)">
+                                    more
+                                </tr>
+                            </ng-template>
+                        </td>
+                    </ng-container>
+                </ng-container>
+            </ng-container>
+        </table>
+        <ng-container *ngIf="showList">
+            <app-json-renderer [schemaJson]="listData"></app-json-renderer>
+        </ng-container> -->
+    </div>
+</div>

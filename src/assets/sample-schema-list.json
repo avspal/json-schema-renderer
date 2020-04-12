@@ -1,0 +1,40 @@
+[
+    {
+        "elementOne": "string"
+    },
+    {
+        "elementTwo": "number"
+    },
+    {
+        "elementThree": "number"
+    },
+    {
+        "elementFour": [
+            {
+                "elementFive": "Date"
+            },
+            {
+                "elementSix": "number"
+            }
+        ]
+    },
+    {
+        "elementOne": "string"
+    },
+    {
+        "elementTwo": "number"
+    },
+    {
+        "elementThree": "number"
+    },
+    {
+        "elementTen": [
+            {
+                "elementTEN": "Date"
+            },
+            {
+                "elementTEN": "number"
+            }
+        ]
+    }
+]

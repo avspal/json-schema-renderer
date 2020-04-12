@@ -3,16 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { JsonRendererComponent } from './json-renderer/json-renderer.component';
+import { ListComponent } from './list/list.component';
+import { CommonService } from './common.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    JsonRendererComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CommonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

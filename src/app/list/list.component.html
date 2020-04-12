@@ -1,0 +1,31 @@
+<table>
+    <ng-container *ngFor="let element of schemaList">
+        <ng-container *ngIf="isObject(element)">
+
+            <ng-container *ngFor="let list of element | keyvalue">
+                <td>
+                    <tr>
+                        <td><span>{{ getSentenceCase(list.key) }}</span></td>
+                    </tr>
+                    <tr *ngIf="list.value  === 'string'">
+                        <input placeholder="type text..." type="text">
+                    </tr>
+                    <tr *ngIf="list.value  === 'number'">
+                        <input placeholder="type number..." type="number">
+                    </tr>
+                    <tr *ngIf="list.value  === 'Date'">
+                        <input type="date">
+                    </tr>
+                    <tr *ngIf="isArray(list.value)">
+                        <span (click)="expand(list.value)" class="material-icons expand__icon">
+                            expand_more
+                            </span>
+                    </tr>
+                </td>
+            </ng-container>
+        </ng-container>
+    </ng-container>
+</table>
+<ng-container *ngIf="showList">
+    <app-list [schemaList]="listData"></app-list>
+</ng-container>

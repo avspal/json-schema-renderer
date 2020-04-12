@@ -1,0 +1,26 @@
+{
+    "nodeOne": "string",
+    "nodeTwo": "Date",
+    "nodeThree": "number",
+    "nodeFour": [
+        {
+            "elementOne": "string"
+        },
+        {
+            "elementTwo": "number"
+        },
+        {
+            "elementThree": "number"
+        },
+        {
+            "elementFour": [
+                {
+                    "elementFive": "Date"
+                },
+                {
+                    "elementSix": "number"
+                }
+            ]
+        }
+    ]
+}
